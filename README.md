@@ -1,27 +1,33 @@
-# MCP Conexión Consultorio
+# MCP Clínica Foianini - Skills
 
-Configuración de MCP Oracle y Skill para consultas del área de Consultorios de Clínica Foianini.
+Configuración de MCP Oracle y Skills para consultas de Clínica Foianini.
 
-## Contenido
+## Estructura
 
-| Archivo | Descripción |
-|---------|-------------|
-| `.claude/commands/sk-consultorio.md` | Skill `/sk-consultorio` para Claude Code |
-| `docs/MCP_Oracle_Instalacion.md` | Guía de instalación del MCP Oracle |
+```
+.claude/commands/
+├── consultorio/
+│   └── sk-consultorio.md    ← Área Consultorios
+├── general/
+│   └── (pendiente)          ← Consultas generales
+└── (futuras áreas...)
+```
 
-## Uso
+## Skills Disponibles
 
-1. Instalar el MCP Oracle siguiendo `docs/MCP_Oracle_Instalacion.md`
-2. Clonar este repositorio en tu proyecto
-3. Usar el comando `/sk-consultorio` en Claude Code
+| Skill | Comando | Descripción |
+|-------|---------|-------------|
+| Consultorio | `/sk-consultorio` | Turnos, producción, NPS del área consultorios |
+| General | `/sk-general` | *(Pendiente)* |
 
-## Skill Consultorio
+## Instalación
 
-El skill permite consultar:
-- **Turnos:** presentes, ausentes, ocupación, demanda, NPS
-- **Producción:** fee, ingresos, servicios por médico
+1. Instalar el MCP Oracle: `docs/MCP_Oracle_Instalacion.md`
+2. Clonar este repositorio
+3. Usar los comandos `/sk-*` en Claude Code
 
-### Ejemplo
+## Ejemplos
+
 ```
 /sk-consultorio
 Dame los turnos presentes de enero a junio 2025
