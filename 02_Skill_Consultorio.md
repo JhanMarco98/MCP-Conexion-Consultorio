@@ -305,6 +305,12 @@ WHERE T1.FECHA_DESCARGO >= TO_DATE('{{FECHA_INICIO}}','dd/mm/yyyy')
 | TIPO_SERVICIO_GRUPO | Fee, Laboratorio, Cardiología, Ginecología, Imagenología |
 | MONTO_TOTAL_NETO_USD | Sumar para ingresos |
 
+### Notas sobre los Datos (PRODUCCION)
+
+1. **Valores de GRUPO:** En el DWH los valores de T1.GRUPO están **sin tildes** (ECOGRAFIA, RADIOGRAFIA, TOMOGRAFIA COMPUTARIZADA, etc.). Los filtros de esta query ya están correctos.
+
+2. **Tildes en salida:** Los valores con tildes (Ginecología, Ergometría, Ecografía, etc.) son solo etiquetas de salida, no afectan los filtros.
+
 ---
 
 ## Ejemplos de Uso
