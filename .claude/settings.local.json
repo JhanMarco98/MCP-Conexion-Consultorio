@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth:*)",
+      "Bash(git --version:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: documentación MCP Oracle y Skill Consultorio\n\n- Guía de instalación de MCP Oracle\n- Documentación del Skill Consultorio\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git branch:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)",
+      "mcp__oracle-dwh__oracle_query",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd Skill Consultorio command for Claude Code\n\nAdds the /consultorio skill that enables querying the Oracle DWH\nfor appointment and production data at Clinica Foianini.\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nFix: add accent-insensitive specialty names\n\nAdds both versions \\(with and without accents\\) for:\n- ECOCARDIOGRAMA/ECOGRAFÍA DOPPLER...\n- NUTRICIÓN - TRABAJADORES CAF\n\nThis ensures filters work regardless of encoding issues.\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git mv:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
