@@ -78,10 +78,37 @@ Los skills funcionan como asistentes de datos que:
 ### Compartido
 - **GRUPO_SEGURO**: VITALIA, ALIANZA, BISA, NACIONAL, PARTICULAR, OTROS
 
+## Estructura de Cuentas
+
+```
+GESTION / INTERNACION / ID
+   ↓          ↓          ↓
+  Año      Cuenta     Subevento
+```
+
+Ejemplo: `2024/144304-1` = Gestión 2024, Internación 144304, ID 1 (primer subevento)
+
 ## Exclusiones Estándar
 
-**Estados:** ERROR, NO TOMAR EN CUENTA (SE DIO DA BAJA AGENDA)
+### sk-consultorio
+- **Estados:** ERROR, NO TOMAR EN CUENTA (SE DIO DA BAJA AGENDA)
+- **Seguros:** CAF Control Medico Al Personal, Accidentes Laborales Caf (mantener NULL)
+- **Especialidades no-consulta:** Imágenes, laboratorio, procedimientos diagnósticos, vacunas, fisioterapia, emergencias
 
-**Seguros:** CAF Control Medico Al Personal, Accidentes Laborales Caf (mantener NULL)
+### sk-general
+| GESTION | INTERNACION | ID | Motivo |
+|---------|-------------|-----|--------|
+| 2024 | 144304 | 1 | Honorarios con montos erróneos (Bs 35.2M por error de carga) |
 
-**Especialidades no-consulta:** Imágenes (resonancia, tomografía, rayos X), laboratorio, procedimientos diagnósticos (ECG, holter, MAPA), vacunas, fisioterapia, emergencias
+**Filtro en query base:**
+```sql
+AND NOT (A.GESTION = 2024 AND A.INTERNACION = 144304 AND A.ID = 1)
+```
+
+## Filtro de Fechas
+
+Usar `< FECHA_FIN + 1` para incluir todo el día de la fecha fin:
+```sql
+WHERE D.FECHA_DESCARGO >= TO_DATE('{{FECHA_INICIO}}','dd/mm/yyyy')
+    AND D.FECHA_DESCARGO < TO_DATE('{{FECHA_FIN}}','dd/mm/yyyy') + 1
+```
