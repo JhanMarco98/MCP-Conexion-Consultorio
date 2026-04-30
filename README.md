@@ -6,10 +6,8 @@ Configuración de MCP Oracle y Skills para consultas de Clínica Foianini.
 
 ```
 .claude/commands/
-├── consultorio/
-│   └── sk-consultorio.md    ← Área Consultorios
-├── general/
-│   └── (pendiente)          ← Consultas generales
+├── sk-consultorio.md    ← Área Consultorios
+├── sk-general.md        ← Producción general de la clínica
 └── (futuras áreas...)
 ```
 
@@ -17,8 +15,8 @@ Configuración de MCP Oracle y Skills para consultas de Clínica Foianini.
 
 | Skill | Comando | Descripción |
 |-------|---------|-------------|
-| Consultorio | `/sk-consultorio` | Turnos, producción, NPS del área consultorios |
-| General | `/sk-general` | *(Pendiente)* |
+| Consultorio | `/sk-consultorio` | Turnos, ausencias, NPS del área consultorios |
+| General | `/sk-general` | Producción general: ingresos, servicios, lab, imagen, fee, descuentos |
 
 ## Instalación
 
